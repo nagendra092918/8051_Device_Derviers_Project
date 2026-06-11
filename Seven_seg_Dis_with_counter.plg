@@ -1,0 +1,38 @@
+<html>
+<body>
+<pre>
+<h1>µVision2 Build Log</h1>
+<h2>Project:</h2>
+D:\8051_Learning\Seven_Segment_Display_with_counter\Seven_seg_Dis_with_counter.uv2
+Project File Date:  06/09/2026
+
+<h2>Output:</h2>
+compiling Seven_seg_Dis_with_counter.c...
+Seven_seg_Dis_with_counter.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SEG_NUM_1?SEVEN_SEG_DIS_WITH_COUNTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SEG_NUM_2?SEVEN_SEG_DIS_WITH_COUNTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SEG_NUM_3?SEVEN_SEG_DIS_WITH_COUNTER
+Program Size: data=9.0 xdata=0 code=149
+creating hex file from "Seven_seg_Dis_with_counter"...
+"Seven_seg_Dis_with_counter" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling Seven_seg_Dis_with_counter.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SEG_NUM_1?SEVEN_SEG_DIS_WITH_COUNTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SEG_NUM_2?SEVEN_SEG_DIS_WITH_COUNTER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SEG_NUM_3?SEVEN_SEG_DIS_WITH_COUNTER
+Program Size: data=9.0 xdata=0 code=149
+creating hex file from "Seven_seg_Dis_with_counter"...
+"Seven_seg_Dis_with_counter" - 0 Error(s), 3 Warning(s).
+</pre>
+</body>
+</html>

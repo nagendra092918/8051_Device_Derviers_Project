@@ -1,0 +1,119 @@
+C51 COMPILER V7.06   SEVEN_SEG_DIS_WITH_COUNTER                                            06/09/2026 15:50:11 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE SEVEN_SEG_DIS_WITH_COUNTER
+OBJECT MODULE PLACED IN Seven_seg_Dis_with_counter.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Seven_seg_Dis_with_counter.c BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          /**********************Increment counter 0 to 255 and dislay in seven segment display*********************
+             -*/
+   2          
+   3          #include<stdio.h>
+   4          #include<reg51.h>
+   5          #include"stdint.h"
+   6          
+   7          sbit Seg0 = P2^0; // Port2 pin0 connected to Seg0 enable pin
+   8          sbit Seg1 = P2^1; // Port2 pin1 connected to Seg1 enable pin
+   9          sbit Seg2 = P2^2; // Port2 pin2 connected to Seg2 enable pin
+  10          sbit Seg3 = P2^3; // Port2 pin3 connected to Seg3 enable pin
+  11          
+  12          
+  13          void Seg_num_0(void);
+  14          void Seg_num_1(void);
+  15          void Seg_num_2(void);
+  16          void Seg_num_3(void);
+  17          
+  18          void Delay_ms(uint16_t);
+  19          
+  20          void main()
+  21          {
+  22   1          P2 = 0x00; // Port2 assigned as output
+  23   1          P1 = 0x00; // Port1 assigned as output
+  24   1          while(1)
+  25   1          {
+  26   2              P2 |= 0x0F;
+  27   2              Seg_num_0();
+  28   2              //Seg_num_1();
+  29   2              //Seg_num_2();
+  30   2              //Seg_num_3();
+  31   2              Delay_ms(1000);
+  32   2          }
+  33   1      } 
+  34          
+  35          
+  36          void Seg_num_0(void)
+  37          {
+  38   1          
+  39   1          P1 |= 0x3F;
+  40   1          Delay_ms(1000);
+  41   1          P1 = (P1&0)|(0x06);
+  42   1          Delay_ms(1000);
+  43   1          P1 = (P1&0)|0x5B;
+  44   1          Delay_ms(1000);
+  45   1          P1 = (P1&0)|0x4F;
+  46   1          Delay_ms(1000);
+  47   1          P1 = (P1&0)|0x66;
+  48   1          Delay_ms(1000);
+  49   1          P1 = (P1&0)|0x6D;
+  50   1          Delay_ms(1000);
+  51   1          P1 = (P1&0)|0x7D;
+  52   1          Delay_ms(1000);
+  53   1          P1 = (P1&0)|0x07;
+  54   1          Delay_ms(1000);
+C51 COMPILER V7.06   SEVEN_SEG_DIS_WITH_COUNTER                                            06/09/2026 15:50:11 PAGE 2   
+
+  55   1          P1 = (P1&0)|0x7F;
+  56   1          Delay_ms(1000);
+  57   1          P1 = (P1&0)|0x67;
+  58   1          Delay_ms(1000);
+  59   1      
+  60   1      }
+  61          void Seg_num_1(void)
+  62          {
+  63   1          P2 |= 0x0;
+  64   1          P1 |= 0x3F;
+  65   1      
+  66   1      }
+  67          void Seg_num_2(void)
+  68          {
+  69   1          P2 |= 0x03;
+  70   1          P1 |= 0x3F;
+  71   1      
+  72   1      }
+  73          void Seg_num_3(void)
+  74          {
+  75   1          P2 |= 0x04;
+  76   1          P1 |= 0x3F;
+  77   1      
+  78   1      }
+  79          
+  80          void Delay_ms(uint16_t ms)
+  81          {
+  82   1          uint16_t i,j;
+  83   1      
+  84   1          for(i=0; i<ms; i++)
+  85   1          {
+  86   2              for(j=0;j<114;j++)
+  87   2              {
+  88   3              //nothing to do
+  89   3              }
+  90   2          }
+  91   1      }
+  92          
+  93          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    134    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
