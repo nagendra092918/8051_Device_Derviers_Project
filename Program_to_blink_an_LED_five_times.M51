@@ -1,0 +1,152 @@
+BL51 BANKED LINKER/LOCATER V5.03                                                        06/09/2026  16:01:56  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.03, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE .\STARTUP.obj, Blick_LED_Five_times_button_click.obj TO Program_to_blink_an_LED_five_times RAMS
+>> IZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\STARTUP.obj (?C_STARTUP)
+  Blick_LED_Five_times_button_click.obj (BLICK_LED_FIVE_TIMES_BUTTON_CLICK)
+
+
+LINK MAP OF MODULE:  Program_to_blink_an_LED_five_times (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         _DATA_GROUP_
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0030H     UNIT         ?PR?MAIN?BLICK_LED_FIVE_TIMES_BUTTON_CLICK
+            CODE    0830H     0020H     UNIT         ?PR?_DELAY_MS?BLICK_LED_FIVE_TIMES_BUTTON_CLICK
+            CODE    0850H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   Program_to_blink_an_LED_five_times (?C_STARTUP)
+
+
+SEGMENT                                            DATA_GROUP 
+  +--> CALLED SEGMENT                            START    LENGTH
+----------------------------------------------------------------
+?C_C51STARTUP                                    -----    -----
+  +--> ?PR?MAIN?BLICK_LED_FIVE_TIMES_BUTTON_...
+
+?PR?MAIN?BLICK_LED_FIVE_TIMES_BUTTON_...         0008H    0002H
+  +--> ?PR?_DELAY_MS?BLICK_LED_FIVE_TIMES_BU...
+
+
+
+SYMBOL TABLE OF MODULE:  Program_to_blink_an_LED_five_times (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0850H         SEGMENT       ?C_C51STARTUP
+  I:000AH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+BL51 BANKED LINKER/LOCATER V5.03                                                      06/09/2026  16:01:56  PAGE 2
+
+
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0853H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0000H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0850H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         92
+  C:0850H         LINE#         99
+  C:0852H         LINE#         100
+  C:0853H         LINE#         101
+  C:0854H         LINE#         102
+  C:0856H         LINE#         151
+  C:0859H         LINE#         155
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        BLICK_LED_FIVE_TIMES_BUTTON_CLICK
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  C:0800H         PUBLIC        main
+  C:0830H         PUBLIC        _delay_ms
+  B:0080H.0       PUBLIC        led
+  B:00A0H.0       PUBLIC        swt
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        Led_time
+  D:0009H         SYMBOL        i
+  -------         ENDDO         
+  C:0800H         LINE#         12
+  C:0800H         LINE#         13
+  C:0800H         LINE#         14
+  C:0803H         LINE#         15
+  C:0806H         LINE#         16
+  C:0809H         LINE#         18
+  C:0809H         LINE#         19
+  C:0809H         LINE#         20
+  C:080CH         LINE#         21
+  C:080CH         LINE#         22
+  C:0816H         LINE#         23
+  C:0816H         LINE#         24
+  C:0818H         LINE#         25
+  C:081FH         LINE#         26
+  C:0821H         LINE#         27
+  C:0828H         LINE#         28
+BL51 BANKED LINKER/LOCATER V5.03                                                      06/09/2026  16:01:56  PAGE 3
+
+
+  C:082CH         LINE#         29
+  C:082CH         LINE#         31
+  C:082CH         LINE#         32
+  C:082EH         LINE#         33
+  C:082EH         LINE#         34
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        num
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0830H         LINE#         39
+  C:0830H         LINE#         40
+  C:0830H         LINE#         42
+  C:083AH         LINE#         43
+  C:083AH         LINE#         44
+  C:0848H         LINE#         45
+  C:084FH         LINE#         46
+  -------         ENDPROC       _DELAY_MS
+  -------         ENDMOD        BLICK_LED_FIVE_TIMES_BUTTON_CLICK
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0064H BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=11.0 xdata=0 code=95
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

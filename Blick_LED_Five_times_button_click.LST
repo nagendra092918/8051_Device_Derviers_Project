@@ -1,0 +1,75 @@
+C51 COMPILER V7.06   BLICK_LED_FIVE_TIMES_BUTTON_CLICK                                     06/09/2026 16:01:56 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE BLICK_LED_FIVE_TIMES_BUTTON_CLICK
+OBJECT MODULE PLACED IN Blick_LED_Five_times_button_click.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Blick_LED_Five_times_button_click.c BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          /*************************************Blink LED 5 times after press button********************************
+             -***********/
+   2          
+   3          #include<reg51.h>
+   4          #include<stdio.h>
+   5          #include"stdint.h"
+   6          
+   7          sbit swt = P2^0;     // Switch connected to Port2^0 pin
+   8          sbit led = P0^0;     // LED connected to Port0^0 pin
+   9          
+  10          void delay_ms(uint16_t );
+  11          
+  12          void main()
+  13          {
+  14   1          uint8_t Led_time = 5,i;
+  15   1          P2 = 0xFF;    //Port2 assigned as Input
+  16   1          P0 = 0x00;    //Port0 assigned as Output
+  17   1      
+  18   1          while(1)
+  19   1          {
+  20   2             if(swt == 0x00)
+  21   2             {
+  22   3               for(i=0;i<Led_time;i++)
+  23   3               {
+  24   4                  led = 0x00;
+  25   4                  delay_ms(1000);
+  26   4                  led = 0x01;
+  27   4                  delay_ms(1000);
+  28   4               }
+  29   3             }
+  30   2             else
+  31   2             {
+  32   3                  led = 0x00;
+  33   3             }
+  34   2          }
+  35   1      
+  36   1      }
+  37          
+  38          
+  39          void delay_ms(uint16_t num)
+  40          {
+  41   1          uint16_t i,j;
+  42   1          for (i=0;i<num;i++)
+  43   1          {
+  44   2              for(j=0;j<114;j++);
+  45   2          }
+  46   1      }
+  47          
+  48          
+  49          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     80    ----
+   CONSTANT SIZE    =   ----    ----
+C51 COMPILER V7.06   BLICK_LED_FIVE_TIMES_BUTTON_CLICK                                     06/09/2026 16:01:56 PAGE 2   
+
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
